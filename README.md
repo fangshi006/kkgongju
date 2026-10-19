@@ -4,6 +4,8 @@
 
 纯静态页面：没有构建步骤、没有第三方依赖、没有后端，双击 `index.html` 就能看，也可以直接丢到任意静态托管上。
 
+**线上地址：<https://fangshi006.github.io/kkgongju/>**（GitHub Pages 托管）
+
 ## 效果预览
 
 | 桌面浅色 | 桌面深色 | 手机 |
@@ -21,6 +23,7 @@
 | `server.js` | 本地 HTTPS 预览服务（零依赖，部署时不需要） |
 | `certs/` | 自签名证书，配合 `server.js` 使用（部署时不需要） |
 | `docs/项目构想.md` | 需求与设计决策记录 |
+| `.gitignore` | 排除证书、压缩包等不该上传的文件 |
 
 ## 本地预览
 
@@ -83,13 +86,25 @@ node server.js
 
 ## 部署
 
-整个文件夹原样上传即可，所有路径都是相对的：
+当前已部署在 GitHub Pages：
 
-- GitHub Pages：推送到仓库，设置里开启 Pages。
+- 线上地址：<https://fangshi006.github.io/kkgongju/>
+- 仓库：<https://github.com/fangshi006/kkgongju>（`main` 分支根目录，推送后自动构建，约 1 分钟生效）
+
+更新内容后：
+
+```bash
+git add -A
+git commit -m "更新工具清单"
+git push
+```
+
+也可以部署到任意静态托管（所有路径都是相对的，整个文件夹原样上传即可）：
+
 - 任意虚拟主机 / 对象存储：把 `index.html`、`style.css`、`app.js`、`data.js` 传到网站根目录。
 - 阿里云 OSS / 腾讯云 COS：开启静态网站功能，首页设为 `index.html`。
 
-`docs/` 和 `README.md` 可以不传，不影响页面运行。
+`docs/`、`README.md`、`server.js`、`certs/` 不需要上传，不影响页面运行。
 
 ## 设计约束
 
