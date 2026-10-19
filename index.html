@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light" data-mode="system">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>坤坤工具箱 · 精选软件，每个都有用</title>
+<meta name="description" content="坤坤工具箱：把自己常用、觉得好用的软件整理成一页，写明用途和官网，方便浏览和查找。">
+<meta name="theme-color" content="#f6f7f9">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ctext x='32' y='45' font-size='34' text-anchor='middle' fill='%23ffffff' font-family='system-ui,sans-serif'%3E%E5%9D%A4%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script>
+  /* 在样式生效前先确定主题，避免刷新时闪一下浅色 */
+  (function () {
+    try {
+      var mode = localStorage.getItem('kk-theme');
+      if (mode !== 'light' && mode !== 'dark') mode = 'system';
+      var dark = mode === 'dark' ||
+        (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      var el = document.documentElement;
+      el.setAttribute('data-mode', mode);
+      el.setAttribute('data-theme', dark ? 'dark' : 'light');
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <h1>坤坤工具箱</h1>
+      <p class="tagline">精选软件，每个都有用</p>
+    </div>
+    <button id="theme-btn" class="icon-btn" type="button" title="切换主题">
+      <svg class="icon" data-icon="system" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="2.5" y="4" width="19" height="13" rx="2.5"/><path d="M9 20.5h6M12 17v3.5"/>
+      </svg>
+      <svg class="icon" data-icon="light" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/>
+        <path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/>
+      </svg>
+      <svg class="icon" data-icon="dark" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.5 14.3A8.5 8.5 0 0 1 9.7 3.5a8.5 8.5 0 1 0 10.8 10.8z"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="toolbar">
+    <div class="search">
+      <svg class="icon search-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>
+      </svg>
+      <input id="search" type="search" placeholder="搜索工具名称或用途…" aria-label="搜索工具"
+             autocomplete="off" spellcheck="false">
+      <button id="clear-search" class="clear-btn" type="button" aria-label="清空搜索" hidden>&times;</button>
+    </div>
+    <nav id="chips" class="chips" aria-label="按分类筛选"></nav>
+  </div>
+
+  <p id="count" class="count" role="status" aria-live="polite"></p>
+
+  <section id="grid" class="grid" aria-label="工具列表"></section>
+
+  <div id="empty" class="empty" hidden>
+    <p class="empty__title">没有找到匹配的工具</p>
+    <p class="empty__hint">换个关键词，或者清空筛选条件再看看。</p>
+    <button id="reset" class="btn btn--primary" type="button">清空筛选</button>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>最后更新：2026-10-19 · 内容会陆续补充</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
