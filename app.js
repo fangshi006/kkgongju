@@ -156,7 +156,7 @@
     if (url) {
       moreHtml +=
         '<a class="btn link-btn" href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">' +
-        '访问官网' +
+        '打开链接' +
         '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">' +
         '<path d="M14 4h6v6"/><path d="M20 4l-8.5 8.5"/>' +
         '<path d="M19 14.5V19a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 19V6.5A1.5 1.5 0 0 1 5 5h4.5"/>' +

@@ -6,7 +6,7 @@
      name     工具名称（必填）
      desc     一句话简介（必填，卡片上显示）
      detail   长介绍（卡片展开后显示，建议 2~4 句）
-     url      官网链接（可留空，留空则不显示"访问官网"按钮）
+     url      链接，一般为官网地址（可留空，留空则不显示"打开链接"按钮）
      category 分类，必须是下面 7 个之一：
               系统工具 / 办公效率 / 影音图像 / 开发编程 / 网络工具 / 安全维护 / 其他
    =========================================================== */
@@ -66,6 +66,41 @@ window.TOOLS = [
     desc: "软件卸载与残留清理",
     detail: "在卸载程序后扫描并删除注册表项和残留文件夹，弥补系统自带卸载的不足。单个可执行文件，免安装，支持强制卸载和按安装日期排序查看。",
     url: "https://geekuninstaller.com/",
+    category: "安全维护"
+  },
+  {
+    name: "1kPPT模板",
+    desc: "PPT 模板资源合集",
+    detail: "",
+    url: "https://pan.quark.cn/s/d4f844b92c1e#/list/share",
+    category: "办公效率"
+  },
+  {
+    name: "PrivaZer",
+    desc: "免费电脑垃圾清理工具",
+    detail: "",
+    url: "https://privazer.com/",
+    category: "系统工具"
+  },
+  {
+    name: "ZyperWin++",
+    desc: "电脑系统快速优化",
+    detail: "",
+    url: "https://github.com/ZyperWave/ZyperWinOptimize",
+    category: "系统工具"
+  },
+  {
+    name: "办公等工具总库",
+    desc: "常用软件资源导航",
+    detail: "",
+    url: "https://s7zy.top/",
+    category: "其他"
+  },
+  {
+    name: "HiBit Uninstaller",
+    desc: "电脑软件卸载与残留清理",
+    detail: "",
+    url: "https://www.hibitsoft.ir/",
     category: "安全维护"
   }
 ];
